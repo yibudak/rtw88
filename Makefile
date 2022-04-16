@@ -1,5 +1,4 @@
 SHELL := /bin/sh
-KVER  ?= $(shell uname -r)
 KSRC := /lib/modules/$(KVER)/build
 FIRMWAREDIR := /lib/firmware/
 PWD := $(shell pwd)

@@ -43,16 +43,18 @@ If any of the packets above are not found check if your distro installs them lik
 ##### Installation
 For all distros:
 ```bash
-git clone https://github.com/lwfinger/rtw88.git
+git clone https://github.com/yibudak/rtw88.git
 cd rtw88
+EXPORT KVER=$(uname -r)
 make
 sudo make install
 ```
 ##### Installation with module signing for SecureBoot
 For all distros:
 ```bash
-git clone git://github.com/lwfinger/rtw88.git
+git clone git://github.com/yibudak/rtw88.git
 cd rtw88
+EXPORT KVER=$(uname -r)
 make
 sudo make sign-install
 ```
@@ -71,6 +73,11 @@ Use BOOT menu from BIOS to boot into your OS
 In the MOK managerment screen, select reset MOK list
 Reboot then retry from the step make sign-install
 
+##### Auto compile and install driver after kernel update
+```bash
+sudo cp ./rtw88-driver-install-after-update /etc/kernel/postinst.d/rtw88-driver-install-after-update
+sudo chmod +x /etc/kernel/postinst.d/rtw88-driver-install-after-update
+```
 ##### Blacklisting (needed if you want to use these modules)
 Some distros provide `RTL8723DE` drivers. To use this driver, that one MUST be
 blacklisted. How to do that is left as an exercise as learning that will be very beneficial.

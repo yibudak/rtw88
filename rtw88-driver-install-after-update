@@ -1,0 +1,5 @@
+#!/bin/bash
+
+KVER=$1
+git clone https://github.com/yibudak/rtw88 /tmp/rtw88
+cd /tmp/rtw88 && make && sudo make install
